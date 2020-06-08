@@ -1,0 +1,35 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:id="@+id/toolbar_main_activity"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:theme="@style/ToolBarMainActivity">
+
+    <ImageView
+        android:id="@+id/ivToolbarBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        app:srcCompat="@drawable/photo32" />
+
+    <TextView
+        android:id="@+id/tvToolbarName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:gravity="center"
+        android:text="@string/instagram"
+        android:textColor="@color/black_text"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        app:srcCompat="@drawable/comment32" />
+</LinearLayout>

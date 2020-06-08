@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="@string/home"
+        android:id="@+id/search_auto"
+        android:icon="@drawable/home32"/>
+    <item
+        android:title="@string/search"
+        android:id="@+id/favorite"
+        android:icon="@drawable/search32"/>
+    <item
+        android:title="@string/add"
+        android:id="@+id/my_deals"
+        android:icon="@drawable/add32"/>
+    <item
+        android:title="@string/like"
+        android:id="@+id/message"
+        android:icon="@drawable/like32"/>
+    <item
+        android:title="@string/profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/profile32"/>
+
+</menu>
