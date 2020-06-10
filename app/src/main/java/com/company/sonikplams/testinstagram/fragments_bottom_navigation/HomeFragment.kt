@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.company.sonikplams.testinstagram.R
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStream
+
 
 class HomeFragment : Fragment() {
 
@@ -15,5 +19,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+    fun readJson(){
+        var json : String? = null
+        try {
+            val inputStream : InputStream = activity?.assets!!.open("jsonuser.json")
+            json = inputStream.bufferedReader().use(BufferedReader::readText)
+
+        }catch(e: IOException){
+
+        }
+
     }
 }
