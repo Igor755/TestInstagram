@@ -14,12 +14,8 @@ import kotlinx.android.synthetic.main.one_item_recycler.view.*
 
 class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUser.RecyclerViewHolder>()  {
 
-
     lateinit var mClickListener: ClickListener
 
-    fun setOnItemClickListener(aClickListener: ClickListener) {
-        mClickListener = aClickListener
-    }
 
     interface ClickListener {
         fun onClick(pos: Int, aView: View)

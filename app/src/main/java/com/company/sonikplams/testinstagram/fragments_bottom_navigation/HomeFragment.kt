@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
     }
 
     @Throws(IOException::class)
-    private fun readText(context: Context, resId: Int): String? {
+     fun readText(context: Context, resId: Int): String? {
         val `is`: InputStream = context.resources.openRawResource(resId)
         val br = BufferedReader(InputStreamReader(`is`))
         val sb = StringBuilder()
