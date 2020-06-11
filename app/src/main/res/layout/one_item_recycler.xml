@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,9 +13,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
+            android:scaleType="fitXY"
             android:layout_marginStart="10dp"
             android:layout_weight="0.1"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/user32"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -25,30 +26,32 @@
             android:orientation="vertical">
         <TextView
             android:id="@+id/name"
+            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Metlin Igor "
+            android:text="@string/name"
             android:textColor="@color/black_text"/>
 
             <TextView
+                android:textSize="14sp"
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Star City"
-                android:textColor="@color/black_text"/>
+                android:text="@string/location"/>
 
         </LinearLayout>
 
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.1"
-            android:rotation="180"
-            android:src="@drawable/point_menu"/>
+            android:id="@+id/menu"
+            android:scaleType="centerInside"
+            android:src="@drawable/point24"/>
     </LinearLayout>
 
     <LinearLayout
@@ -68,32 +71,35 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
+            android:id="@+id/iclike"
             android:layout_centerVertical="true"
-            android:layout_width="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_height="30dp"
+            android:layout_width="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="24dp"
             android:src="@drawable/like32"/>
         <ImageView
             android:layout_centerVertical="true"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/message"
-            android:layout_toRightOf="@+id/like"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/icmessage"
+            android:layout_toEndOf="@+id/iclike"
             android:layout_marginStart="10dp"
             android:src="@drawable/message32"/>
         <ImageView
+            android:id="@+id/icwrite"
             android:layout_centerVertical="true"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_toRightOf="@+id/message"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toEndOf="@+id/icmessage"
             android:layout_marginStart="10dp"
             android:src="@drawable/comment32"/>
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/icsave"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginEnd="10dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/save32"/>
 </RelativeLayout>
 
@@ -103,20 +109,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Liked by"
-            android:textSize="16sp"/>
+            style="@style/TextStandard"
+            android:text="@string/liked"/>
         <TextView
+            style="@style/TextStandard"
             android:id="@+id/like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:textStyle="bold"
             android:layout_marginEnd="10dp"
-            android:text="fsdfsdfsssssssssssssssssssssssssssssssssssssssssssssssss"
-            android:textSize="16sp"/>
+            android:text="@string/example"/>
     </LinearLayout>
 
     <LinearLayout
@@ -125,21 +125,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Jonnyb"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
+            style="@style/TextStandard"
+            android:text="@string/name"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            style="@style/TextStandard"
             android:textColor="@color/blue"
             android:layout_marginEnd="10dp"
-            android:text="fsdfsdfsssssssssssssssssssssssssssssssssssssssssssssssss"
-            android:textSize="16sp"/>
+            android:text="@string/example"/>
     </LinearLayout>
 
     <LinearLayout
@@ -152,7 +146,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="3 HOURS AGO"/>
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/small_text"
+            android:text="@string/date"/>
     </LinearLayout>
 
 </LinearLayout>

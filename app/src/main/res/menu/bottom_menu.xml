@@ -5,19 +5,19 @@
 
     <item
         android:title="@string/home"
-        android:id="@+id/search_auto"
+        android:id="@+id/home"
         android:icon="@drawable/home32"/>
     <item
         android:title="@string/search"
-        android:id="@+id/favorite"
+        android:id="@+id/search"
         android:icon="@drawable/search32"/>
     <item
         android:title="@string/add"
-        android:id="@+id/my_deals"
+        android:id="@+id/add"
         android:icon="@drawable/add32"/>
     <item
         android:title="@string/like"
-        android:id="@+id/message"
+        android:id="@+id/favorite"
         android:icon="@drawable/like32"/>
     <item
         android:title="@string/profile"

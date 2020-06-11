@@ -6,8 +6,21 @@
     <string name="add">Add</string>
     <string name="like">Like</string>
     <string name="profile">Profile</string>
-
     <string name="instagram">Instagram</string>
+    <string name="example">Я к вам пишу — чего же боле?
+     Что я могу ещё сказать?
+     Теперь, я знаю, в вашей воле
+     Меня презреньем наказать.
+     Но вы, к моей несчастной доле
+     Хоть каплю жалости храня,
+     Вы не оставите меня.</string>
+    <string name="date">3 HOURS AGO</string>
+    <string name="liked">Liked by</string>
+    <string name="name">Jonnyb</string>
+    <string name="location">Star City</string>
+
+
+
 
 
 </resources>

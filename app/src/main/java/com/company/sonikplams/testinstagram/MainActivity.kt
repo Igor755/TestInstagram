@@ -2,9 +2,9 @@ package com.company.sonikplams.testinstagram
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.company.sonikplams.testinstagram.fragments_bottom_navigation.HomeFragment
+import com.company.sonikplams.testinstagram.fragments_bottom_navigation.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,53 +24,39 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun hideBottomNavigation() {
-        with(bottomNavigation) {
-            visibility = View.GONE
-        }
-        with(grey_line) {
-            visibility = View.GONE
-        }
-    }
 
-    fun showBottomNavigation() {
-        with(bottomNavigation) {
-            visibility = View.VISIBLE
-        }
-        with(grey_line) {
-            visibility = View.VISIBLE
-        }
-    }
 
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.search_auto -> {
-
-                    /*val searchAutoFragment = SearchMainFragment()
-                        openFragment(searchAutoFragment)*/
+                R.id.home -> {
+                    val homeFragment = HomeFragment()
+                    openFragment(homeFragment)
+                    showToast("R.id.home")
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.search -> {
+                    val searchFragment = SearchFragment()
+                        openFragment(searchFragment)
+                    showToast("R.id.search")
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.add -> {
+                      val addFragment = AddFragment()
+                        openFragment(addFragment)
+                    showToast("R.id.add")
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.favorite -> {
-                    /*val favoriteFragment = FavoritesMainFragment()
-                        openFragment(favoriteFragment)*/
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.my_deals -> {
-                    /*  val dealsFragment = DealsMainFragment()
-                        openFragment(dealsFragment)*/
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.message -> {
-
-                    /* val messageFragment = ChatMainFragment()
-                        openFragment(messageFragment)*/
+                     val favoriteFragment = FavoriteFragment()
+                        openFragment(favoriteFragment)
+                    showToast("R.id.favorite")
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.profile -> {
-
-                    /*val profileFragment = ProfileMainFragment()
-                        openFragment(profileFragment)*/
+                    val profileFragment = ProfileFragment()
+                        openFragment(profileFragment)
+                    showToast("R.id.profile")
                     return@OnNavigationItemSelectedListener true
                 }
             }
@@ -95,6 +81,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+
+    }
+    private fun showToast(message : String){
+        Toast.makeText(baseContext, message, Toast.LENGTH_SHORT).show()
 
     }
 }

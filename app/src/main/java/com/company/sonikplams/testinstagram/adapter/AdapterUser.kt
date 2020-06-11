@@ -1,21 +1,18 @@
 package com.company.sonikplams.testinstagram.adapter
 
-import android.app.AlertDialog
-import android.content.ContentValues
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.company.sonikplams.testinstagram.R
 import com.company.sonikplams.testinstagram.pojo.User
-import java.lang.String
+import kotlinx.android.synthetic.main.one_item_recycler.view.*
 
-class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUser.RecyclerViewHolder>() {
+class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUser.RecyclerViewHolder>()  {
 
 
     lateinit var mClickListener: ClickListener
@@ -32,10 +29,7 @@ class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUs
         val inflater = LayoutInflater.from(parent.context)
         return RecyclerViewHolder(inflater, parent)
     }
-    fun refreshPlaceList(list: MutableList<User>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
+
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         val user: User = list[position]
@@ -57,6 +51,7 @@ class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUs
         private var like: TextView? = null
         private var comment: TextView? = null
 
+
         init {
             name = itemView.findViewById(R.id.name)
             location = itemView.findViewById(R.id.location)
@@ -65,19 +60,34 @@ class AdapterUser (var list: MutableList<User>) : RecyclerView.Adapter<AdapterUs
             comment = itemView.findViewById(R.id.comment)
         }
 
+
         fun bind(user: User) {
+            name?.text = user.name
+            location?.text = user.location
+            Glide.with(itemView.context).load(user.photo).into(itemView.photo)
+            like?.text = user.like
+            comment?.text = user.comment
 
-           /* txtnameplace?.text = itemView.context.resources.getString(R.string.name_place) + " "  + place.name
-            txtlatitude?.text = itemView.context.resources.getString(R.string.lat_c) + " "  + place.latitude.toString()
-            txtlongitude?.text = itemView.context.resources.getString(R.string.lon_c) + " "  + place.longitude.toString()
-            txtzoom?.text = itemView.context.resources.getString(R.string.zoom) + " "  +  place.zoom.toString()
-*/
+            itemView.iclike.setOnClickListener {
+                Toast.makeText(itemView.context, "like", Toast.LENGTH_SHORT).show()
+            }
+            itemView.icmessage.setOnClickListener{
+                Toast.makeText(itemView.context, "message", Toast.LENGTH_SHORT).show()
 
+            }
+            itemView.icsave.setOnClickListener{
+                Toast.makeText(itemView.context, "save", Toast.LENGTH_SHORT).show()
 
+            }
+            itemView.icwrite.setOnClickListener{
+                Toast.makeText(itemView.context, "write", Toast.LENGTH_SHORT).show()
 
+            }
+            itemView.menu.setOnClickListener {
+                Toast.makeText(itemView.context, "menu", Toast.LENGTH_SHORT).show()
+
+            }
         }
-
-
 
     }
 }

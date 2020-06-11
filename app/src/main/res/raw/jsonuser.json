@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "Jonny_b",
+    "location": "Starling city",
+    "photo": "https://i.ibb.co/BPYqF4f/volk.jpg",
+    "like": "Donald trump, Hilari Clinton, Google Chrome, firefox",
+    "comment": "#blue tiger"
+  },
+  {
+    "id": "2",
+    "name": "Jonny_b",
+    "location": "Starling city",
+    "photo": "https://i.ibb.co/tZ65P3P/cat.jpg",
+    "like": "Donald trump, Hilari Clinton, Google Chrome, Firefox",
+    "comment": "#big johnny"
+  }
+]
